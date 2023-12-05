@@ -19,13 +19,16 @@ var (
 )
 
 func main() {
-	for i, f := range days {
+	for i, fs := range days {
 		day := i + 1
 
 		file := fmt.Sprintf("/home/corey/Documents/aoc-input/day%d.txt", day)
 		input := y2023.ReadFromFile(file)
-		output := f(input)
 
+		var output []int
+		for _, f := range fs {
+			output = append(output, f(input))
+		}
 		fmt.Printf("Day %d: %d\n", day, output)
 	}
 }
