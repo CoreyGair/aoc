@@ -12,7 +12,7 @@ var (
 	days = [][]AOCSolution{
 		{y2023.Day1},
 		{y2023.Day2, y2023.Day2Part2},
-		{y2023.Day3},
+		{y2023.Day3, y2023.Day3Part2},
 		{y2023.Day4},
 		{y2023.Day5},
 	}

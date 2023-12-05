@@ -19,4 +19,9 @@ func TestDay3(t *testing.T) {
 	if result != 4361 {
 		t.Errorf("expected 4361 got %v", result)
 	}
+
+	result = Day3Part2(input)
+	if result != 467835 {
+		t.Errorf("expected 467835 got %v", result)
+	}
 }
