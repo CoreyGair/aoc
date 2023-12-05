@@ -1,7 +1,6 @@
 package y2023
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
@@ -125,7 +124,7 @@ func Day3Part2(input string) (result int) {
 			})
 		}
 	}
-	fmt.Print(parts)
+
 	for _, g := range candidateGears {
 		var adjacentParts PartList
 		for _, p := range parts {
