@@ -28,6 +28,23 @@ func (g *Game) Possible() bool {
 	return true
 }
 
+func (g *Game) Power() int {
+	highestNumSeen := map[Color]int{
+		Red:   0,
+		Green: 0,
+		Blue:  0,
+	}
+	for _, r := range g.rounds {
+		for k, v := range r.shown {
+			if v > highestNumSeen[k] {
+				highestNumSeen[k] = v
+			}
+		}
+	}
+
+	return highestNumSeen[Red] * highestNumSeen[Green] * highestNumSeen[Blue]
+}
+
 type Round struct {
 	shown map[Color]int
 }
@@ -48,6 +65,16 @@ func Day2(input string) (result int) {
 	return
 }
 
+func Day2Part2(input string) (result int) {
+	games := parseGames(input)
+
+	for _, g := range games {
+		result += g.Power()
+	}
+
+	return
+}
+
 var (
 	idRegexp      = regexp.MustCompile("[0-9]+$")
 	segmentRegexp = regexp.MustCompile("[0-9]+ [a-z]+")
@@ -58,6 +85,9 @@ var (
 func parseGames(input string) (games []Game) {
 	lines := strings.Split(input, "\n")
 	for _, line := range lines {
+		if line == "" {
+			continue
+		}
 		split := strings.Split(line, ":")
 		games = append(games, Game{
 			id:     Must1(strconv.Atoi(idRegexp.FindString(split[0]))),
