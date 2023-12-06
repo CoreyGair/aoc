@@ -42,4 +42,10 @@ humidity-to-location map:
 	if result != 35 {
 		t.Errorf("expected 35 got %v", result)
 	}
+
+	result = Day5Part2(input)
+
+	if result != 46 {
+		t.Errorf("expected 46 got %v", result)
+	}
 }

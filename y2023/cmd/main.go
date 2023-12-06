@@ -13,13 +13,18 @@ var (
 		{y2023.Day1},
 		{y2023.Day2, y2023.Day2Part2},
 		{y2023.Day3, y2023.Day3Part2},
-		{y2023.Day4},
-		{y2023.Day5},
+		{y2023.Day4, y2023.Day4Part2},
+		{y2023.Day5, y2023.Day5Part2},
+		{y2023.Day6, y2023.Day6Part2},
 	}
 )
 
 func main() {
 	for i, fs := range days {
+		if len(fs) == 0 {
+			continue
+		}
+
 		day := i + 1
 
 		file := fmt.Sprintf("/home/corey/Documents/aoc-input/day%d.txt", day)
