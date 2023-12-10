@@ -91,7 +91,7 @@ func Day4Part2(input string) (result int) {
 }
 
 func parseIntSlice(input string) (result []int) {
-	matches := regexp.MustCompile("[0-9]+").FindAllString(input, -1)
+	matches := regexp.MustCompile("-?[0-9]+").FindAllString(input, -1)
 	for _, match := range matches {
 		result = append(result, Must1(strconv.Atoi(match)))
 	}
