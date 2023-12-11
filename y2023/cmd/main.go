@@ -19,6 +19,8 @@ var (
 		{y2023.Day7},
 		{y2023.Day8, y2023.Day8Part2},
 		{y2023.Day9, y2023.Day9Part2},
+		{y2023.Day10, y2023.Day10Part2},
+		{y2023.Day11, y2023.Day11Part2},
 	}
 )
 
