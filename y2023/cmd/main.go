@@ -23,6 +23,8 @@ var (
 		{}, //{y2023.Day11, y2023.Day11Part2}, // slow
 		{y2023.Day12, y2023.Day12Part2},
 		{y2023.Day13, y2023.Day13Part2},
+		{y2023.Day14, y2023.Day14Part2},
+		{y2023.Day15, y2023.Day15Part2},
 	}
 )
 
