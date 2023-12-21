@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 
 	"github.com/CoreyGair/aoc/y2023"
 )
@@ -25,11 +27,29 @@ var (
 		{y2023.Day13, y2023.Day13Part2},
 		{y2023.Day14, y2023.Day14Part2},
 		{y2023.Day15, y2023.Day15Part2},
+		{y2023.Day16, y2023.Day16Part2},
+		{}, // {y2023.Day17},
+		{},
+		{},
+		{y2023.Day20, y2023.Day20Part2},
 	}
 )
 
 func main() {
+	var day int
+	if len(os.Args) > 1 {
+		var err error
+		day, err = strconv.Atoi(os.Args[1])
+		if err != nil {
+			day = 0
+		}
+	}
+
 	for i, fs := range days {
+		if day != 0 && i+1 != day {
+			continue
+		}
+
 		if len(fs) == 0 {
 			continue
 		}
