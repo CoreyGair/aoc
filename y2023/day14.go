@@ -140,7 +140,7 @@ func LocationListsEqual(l1, l2 []Location) bool {
 	return true
 }
 
-func (l *Location) Equals(other Location) bool {
+func (l Location) Equals(other Location) bool {
 	return l.row == other.row && l.col == other.col
 }
 
